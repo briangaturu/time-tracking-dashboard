@@ -1,214 +1,181 @@
-*{
-    box-sizing: border-box;
-    margin: o;
-    padding: 0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-body{
-    padding: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: aliceblue;
-}
-.main-container{
-  background-color:hsl(226, 43%, 10%) ;  
-  height: 500px;
-  width: 800px;
-  display:flex;
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: hsl(226, 43%, 10%);
+  display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content:space-between;
-  margin: auto ;
-
+  min-height: 100vh;
+  padding: 2rem;
+  color: white;
 }
-.containers-1-2{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    flex-basis: 60%;
 
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1100px;
+  width: 100%;
 }
+
+
 .card1 {
   background-color: hsl(235, 46%, 20%);
   border-radius: 15px;
-  grid-row: span 2;
+  flex: 1 1 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.image {
+.profile {
   background-color: hsl(246, 80%, 60%);
+  border-radius: 15px 15px 0 0;
   padding: 2rem 1.5rem;
-  border-radius: 15px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-.card1 .image img {
-  width: 50px;
-  height: 50px;
+
+.profile img {
+  width: 60px;
+  height: 60px;
   border: 2px solid white;
   border-radius: 50%;
-  margin-bottom: 1rem;
 }
 
-.card1 .image p {
-  font-size: 0.875rem;
+.report-text p {
   color: hsl(236, 100%, 87%);
+  font-size: 0.9rem;
 }
 
-.card1 .image h1 {
+.report-text h1 {
   font-size: 1.5rem;
   font-weight: 300;
 }
-.container1{
-display: flex;
- width:100%;
-    height: 70%;
-    display: flex;
-    flex-direction:row;
-    align-items: center;
-    gap :30px;
 
-}
-.work{
-background-image: url(./images/icon-work.svg);
-background:hsl(15, 100%, 70%);
-border-radius: 10px;
 
-}
-.works{
-    background-color: hsl(235, 46%, 20%);
-    border-radius: 8px;
-    margin-top: 25px;
-}
-.info{
-    background-color: hsl(235, 46%, 20%);
-    border-radius: 8px;
-    margin-top: 25px;
-}
- header h1 h4{
-    color: rgb(248, 250, 252);
-}
-.exercise{
-    background-image: url(./images/icon-exercise.svg);
-    background-color:hsl(145, 58%, 55%) ;
-    border-radius: 5px;
-    height: 150px;
-
-}
-.exercises{
-    background-color: hsl(235, 46%, 20%);
-    border-radius: 8px;
-    margin-top: 25px;
-}
-.container2{
-display:flex;
- width:100%;
-    height: 70%;
-    flex-direction:row;
-    align-items: center;
-    gap :30px;
-}
-.play{
-background-color:hsl(195, 74%, 62%);
-border-radius: 5px;
-background-image: url(./images/icon-play.svg);
-}
-.plays{
+.days {
+  padding: 1.5rem;
   background-color: hsl(235, 46%, 20%);
-    border-radius: 8px;
-    margin-top: 25px;
-  
+  border-radius: 0 0 15px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
-.social{
-background-color: hsl(264, 64%, 52%);
-background-image:url(images/icon-social.svg);
+
+.days p {
+  cursor: pointer;
+  color: hsl(236, 100%, 87%);
 }
-.studys{
-    background-color: hsl(235, 46%, 20%);
-    border-radius: 8px;
-    margin-top: 25px;
+
+.days p.active {
+  color: white;
 }
-.study{
-    background-color: hsl(348, 100%, 68%);
-    background-image: url(images/icon-study.svg);
-    border-radius: 5px;
+
+
+.cards-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  flex: 3 1 0%;
 }
-.studys{
- background-color: hsl(235, 46%, 20%);
-    border-radius: 8px;
-    margin-top: 25px;   
+.card1 {
+  background-color: hsl(235, 46%, 20%);
+  border-radius: 15px;
+  flex: 0 0 250px;
+  max-width: 250px;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.selfcare{
-    background-color: hsl(43, 84%, 65%);
-    background-image: url(images/icon-self-care.svg);
+
+.card {
+  border-radius: 15px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: top right;
+  position: relative;
+  padding-top: 3rem;
 }
-.selfcares{
-background-color: hsl(235, 46%, 20%);
-    border-radius: 8px;
-    margin-top: 25px;    
+
+.card-content {
+  background-color: hsl(235, 46%, 20%);
+  border-radius: 0 0 15px 15px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
-@media (max-width: 1024px) {
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header p {
+  font-size: 1rem;
+}
+
+.card-content h2 {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.subtext {
+  color: hsl(236, 100%, 87%);
+  font-size: 0.875rem;
+}
+
+
+.work {
+  background-color: hsl(15, 100%, 70%);
+  background-image: url(images/icon-work.svg);
+}
+
+.play {
+  background-color: hsl(195, 74%, 62%);
+  background-image: url(images/icon-play.svg);
+}
+
+.study {
+  background-color: hsl(348, 100%, 68%);
+  background-image: url(images/icon-study.svg);
+}
+
+.exercise {
+  background-color: hsl(145, 58%, 55%);
+  background-image: url(images/icon-exercise.svg);
+}
+
+.social {
+  background-color: hsl(264, 64%, 52%);
+  background-image: url(images/icon-social.svg);
+}
+
+.selfcare {
+  background-color: hsl(43, 84%, 65%);
+  background-image: url(images/icon-self-care.svg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
   .main-container {
     flex-direction: column;
-    height: auto;
-    width: 90%;
-    padding: 2rem 1rem;
   }
 
-  .containers-1-2 {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-    flex-basis: 100%;
+  .cards-grid {
+    grid-template-columns: 1fr;
   }
 
-  .container1,
-  .container2 {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    width: 100%;
-    height: auto;
-  }
-
-  .work,
-  .exercise,
-  .play,
-  .study,
-  .social,
-  .selfcare {
-    width: 100%;
-  }
-}
-
-@media (max-width: 600px) {
-  .main-container {
-    padding: 1rem;
-  }
-
-  .card1 {
-    width: 100%;
-  }
-
-  .containers-1-2 {
-    flex-direction: column;
-  }
-
-  .work,
-  .exercise,
-  .play,
-  .study,
-  .social,
-  .selfcare {
-    width: 100%;
-  }
-
-  .container1,
-  .container2 {
-    flex-direction: column;
+  .card-content h2 {
+    font-size: 1.75rem;
   }
 }
